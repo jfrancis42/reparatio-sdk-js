@@ -246,6 +246,28 @@ try {
 
 ---
 
+## Running the Examples
+
+The repository includes 15 runnable examples covering every API method.
+
+```bash
+# clone and install
+git clone https://github.com/jfrancis42/reparatio-sdk-js
+cd reparatio-sdk-js
+npm install
+
+# run all examples
+REPARATIO_API_KEY=rp_... \
+node examples/examples.mjs
+
+# run a single example
+node -e "import('./examples/examples.mjs').then(m => m.exFormats())"
+```
+
+The examples require a valid `REPARATIO_API_KEY` environment variable (except `exFormats()`, which needs no key).
+
+---
+
 ## Privacy
 
 Files are sent to the Reparatio API at `reparatio.app` for processing.

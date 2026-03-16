@@ -28,7 +28,7 @@ export interface InspectResult {
   filename: string;
   detected_encoding: string;
   detected_delimiter: string | null;
-  rows_total: number;
+  rows: number;
   sheets: string[];
   columns: ColumnInfo[];
   preview: Record<string, unknown>[];
