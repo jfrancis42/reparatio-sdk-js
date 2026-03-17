@@ -3,17 +3,17 @@
   "version": "0.1.0",
   "description": "JavaScript/TypeScript SDK for the Reparatio data conversion API",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
     "test": "vitest run",
     "test:watch": "vitest"
   },
@@ -26,11 +26,22 @@
     "parquet",
     "excel",
     "data",
-    "conversion"
+    "conversion",
+    "etl"
   ],
+  "author": "Ordo Artificum LLC <support@reparatio.app>",
+  "homepage": "https://reparatio.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfrancis42/reparatio-sdk-js"
+  },
+  "bugs": {
+    "url": "https://github.com/jfrancis42/reparatio-sdk-js/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^25.5.0",
+    "tsup": "^8.5.1",
     "typescript": "^5.0.0",
     "vitest": "^2.0.0"
   },
